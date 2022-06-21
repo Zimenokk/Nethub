@@ -5,22 +5,20 @@ import TinyInput from "./TinyInput";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {updateTitle} from "../../store/createArticleSlice";
+import {updateMainTxt, updateSubTitle, updateTitle} from "../../store/createArticleSlice";
 
 const MainArticleParams = ({titleParams}) => {
 
     const [titleValue, setTitleValue] = useState("");
-    // const [subTitleValue, setSubTitleValue] = useState("")
-    // const [txtValue, setTxtValue] = useState("")
+    const [subTitleValue, setSubTitleValue] = useState("")
+    const [txtValue, setTxtValue] = useState("")
 
-    const newArticle = useSelector(state => state.articleReducer)
     const dispatch = useDispatch()
-
 
 
     return (<div className={classes.mainArticleParams}>
             <p>{titleParams}</p>
-            {JSON.stringify(newArticle)}
+            {/*{JSON.stringify(newArticle)}*/}
             <TitleInput value={titleValue}
                         setValue={(val)=>{
                             dispatch(updateTitle(val))
@@ -29,10 +27,19 @@ const MainArticleParams = ({titleParams}) => {
                         placeholder={"Заголовок вашої статті"}
                         width={"100%"}/>
             <TitleInput
-                titleToInput={"Короткий опис статті"}
-                placeholder={"Заголовок вашої статті"}
+                value={subTitleValue}
+                setValue={(val)=>{
+                    dispatch(updateSubTitle(val))
+                }}
+                titleToInput={"Підзаголовок вашої статті"}
+                placeholder={"Короткий опис статті"}
                 width={"100%"}/>
-            <TinyInput tinyTitle={"Текст статті"}/>
+            <TinyInput
+                initialValue={txtValue}
+                setValue={(val)=>{
+                    dispatch(updateMainTxt(val))
+                }}
+                tinyTitle={"Текст статті"}/>
         </div>);
 };
 

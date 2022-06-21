@@ -5,12 +5,13 @@ import CreateArticle from "./CreateArticle";
 import ArticleSettings from "./ArticleSettings";
 
 const ArticleCreatingSpace = () => {
-    let [article, setArticle] = useState({
-        title:"",
-        subTitle:"",
-        mainTxt:null
-
-    })
+    // let [article, setArticle] = useState({
+    //     title:"",
+    //     subTitle:"",
+    //     mainTxt:"",
+    //     tags:[],
+    //     originalLink:""
+    // })
 
     return (
         <div className="mainContainer">

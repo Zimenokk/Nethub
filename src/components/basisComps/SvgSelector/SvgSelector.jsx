@@ -5,6 +5,7 @@ import {SvgIcon, svgIconClasses} from "@mui/material";
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
+import AddIcon from '@mui/icons-material/Add';
 
 const SvgSelector = ({id}) => {
 
@@ -69,6 +70,10 @@ const SvgSelector = ({id}) => {
 
         case "DriveFileRenameOutlineIcon":
             return <DriveFileRenameOutlineIcon></DriveFileRenameOutlineIcon>
+
+        case "AddIcon":
+            return <AddIcon></AddIcon>
+
         default:
             return <svg></svg>
     }

@@ -43,7 +43,7 @@
 .articleSettings{
   width: 23%;
 }
-.articleSettings button{
+.articleSettings>button{
   width: 100%;
   margin-top: 20px;
 }
@@ -84,6 +84,18 @@
   margin-top: -10px;
 }
 .fixedTags{
-  background: white;
-
+  //background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+.fixedTags button{
+  display: flex;
+  width: 20%;
+  border:none;
+  background: white;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+

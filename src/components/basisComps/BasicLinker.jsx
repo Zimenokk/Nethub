@@ -1,12 +1,13 @@
 import React from 'react';
 import SvgSelector from "./SvgSelector/SvgSelector";
 import classes from "./basicComps.module.scss"
+import {Link} from "react-router-dom";
 
-const BasicLinker = ({linkTxt, linkWay, svgId}) => {
+const BasicLinker = ({...props}) => {
     return (
-        <a href={linkWay} className={classes.basicLink}>
-            <p>{linkTxt}</p>
-            <SvgSelector id={svgId}/>
+        <a href={"#"} {...props} className={classes.basicLink}>
+            <p>{props.linktxt}</p>
+            <SvgSelector id={props.svgId}/>
         </a>
 
     );

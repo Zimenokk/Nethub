@@ -4,8 +4,11 @@ import classes from "./ArticleCreating.module.scss"
 import TitleInput from "../basisComps/titleInput/TitleInput";
 import SettingsInputItem from "./SettingsInputItem";
 import UiButton from "../UI/button/UiButton";
+import {useSelector} from "react-redux";
 
 const ArticleSettings = () => {
+
+    const newArticle = useSelector(state => state.articleReducer)
     return (
         <div className={classes.articleSettings}>
             <p>Налаштування</p>

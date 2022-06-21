@@ -3,7 +3,7 @@ import classes from '../uiComps.module.css'
 
 const UiButton = ({children, ...props}) => {
     return (
-        <button className={classes.btnUi}>
+        <button {...props} className={classes.btnUi}>
             {children}
         </button>
     );

@@ -21,7 +21,7 @@ export const createArticleSlice = createSlice({
             state.mainTxt = action.payload
         },
         updateTags: (state, action) => {
-            state.tags = [...state.tags, ...action.payload]
+            state.tags = state.tags.concat(action.payload)
         },
         updateOriginalLink: (state, action) => {
             state.originalLink = action.payload
