@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import MainSpace from "./components/mainSpace/MainSpace";
+import NewsSpace from "./components/mainSpace/news/NewsSpace";
+import MenuItems from "./components/mainSpace/menuItems/MenuItems";
+import 'typeface-inter'
+import moment from "moment";
+// import {Routes, Route, Link} from 'react-router-dom'
+import 'moment/locale/uk'
+import 'moment/locale/de'
+import ArticleCreatingSpace from "./components/articleCreating/ArticleCreatingSpace";
+
+
+const LANGUAGE = "uk";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    switchLocal()
+
+    return (
+        <div className="App">
+            <Header/>
+            <ArticleCreatingSpace/>
+            {/*<MainSpace/>*/}
+
+            {/*<Routes>*/}
+            {/*    <Route path="/" element = {<MainSpace/>} />*/}
+            {/*    <Route path="/" element = {<NewsSpace/>} />*/}
+            {/*    <Route path="/" element = {<MenuItems/>} />*/}
+            {/*</Routes>*/}
+        </div>
+    );
+}
+
+const switchLocal = ()=>{
+        switch(LANGUAGE){
+            case "uk":
+                moment.locale("uk")
+                break
+            case "de":
+                moment.locale("de")
+                break
+        }
 }
 
 export default App;
